@@ -2,7 +2,7 @@
   <div class="row justify-content-center my-5">
     <div class="col-md-8">
       <a
-        href="/student/create"
+        href="/students/create"
         style="width: 150px"
         class="btn btn-sm btn-primary"
         >Add New Student</a
@@ -24,27 +24,39 @@
               </tr>
             </thead>
             <tbody>
+              <% allData.forEach((data, index) => { %>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>mark!@gmail.com</td>
+                <th scope="row"><%= index+1 %></th>
+                <td><%= data.name %></td>
+                <td><%= data.email %></td>
                 <td>
-                  <img width="40" src="assets/upload/1.png" alt="" />
+                  <img
+                    width="40"
+                    src="/assets/upload/<%= data.photo %>"
+                    alt=""
+                  />
                 </td>
                 <td>
-                  <a href="" class="btn btn-sm btn-info"
+                  <a
+                    href="/students/single/<%= data._id %>"
+                    class="btn btn-sm btn-info"
                     ><i class="fas fa-eye"></i
                   ></a>
 
-                  <a href="" class="btn btn-sm btn-warning"
+                  <a
+                    href="/students/edit/<%= data._id %>"
+                    class="btn btn-sm btn-warning"
                     ><i class="fas fa-edit"></i
                   ></a>
 
-                  <a href="" class="btn btn-sm btn-danger"
+                  <a
+                    href="/students/delete/<%= data._id %>"
+                    class="btn btn-sm btn-danger"
                     ><i class="fas fa-trash"></i
                   ></a>
                 </td>
               </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>

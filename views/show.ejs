@@ -1,14 +1,20 @@
 <div class="container">
   <div class="row justify-content-center my-5">
     <div class="col-md-4">
-      <a href="/student" style="width: 100px" class="btn btn-sm btn-primary"
+      <a href="/students" style="width: 100px" class="btn btn-sm btn-primary"
         >Back</a
       >
       <br />
       <br />
       <div class="card">
-        <div class="card-body">
-          <img src="" alt="" />
+        <div class="card-body m-auto">
+          <img
+            src="/assets/upload/<%= single.photo %> "
+            alt=""
+            style="width: 150px"
+          />
+          <h3><strong><%= single.name %> </strong></h3>
+          <h3><strong><%= single.email %> </strong></h3>
         </div>
       </div>
     </div>

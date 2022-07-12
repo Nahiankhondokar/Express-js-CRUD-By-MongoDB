@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <div class="col-md-4">
+      <a href="/students" style="width: 100px" class="btn btn-sm btn-primary"
+        >Back</a
+      >
+      <br />
+      <br />
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center">Edit Student</h2>
+          <hr />
+          <form
+            action="/students/update/<%= edit._id %>"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="my2">
+              <label for="">Name</label>
+              <input
+                class="form-control"
+                type="text"
+                name="name"
+                id=""
+                value="<%= edit.name %>"
+              />
+              <input
+                class="form-control"
+                type="hidden"
+                name="_method"
+                value="PATCH"
+              />
+            </div>
+            <div class="my2">
+              <label for="">Email</label>
+              <input
+                class="form-control"
+                type="text"
+                name="email"
+                id=""
+                value="<%= edit.email %>"
+              />
+            </div>
+            <div class="my2">
+              <label for="">Photo</label><br />
+              <input
+                class="form-control"
+                type="hidden"
+                name="old_photo"
+                value="<%= edit.photo %>"
+              />
+              <img
+                src="/assets/upload/<%= edit.photo %>"
+                style="width: 200px"
+                alt=""
+              />
+              <input class="form-control" type="file" name="photo" id="" />
+            </div>
+            <br />
+            <div class="my2">
+              <input class="btn btn-info" type="submit" value="Update User" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

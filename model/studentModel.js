@@ -1,26 +1,22 @@
 const mongoose = require('mongoose');
 
 
-// student model
 const studentModel = mongoose.Schema({
     name : {
-        type : String, 
-        required : [true, "name feild is required"],
-        trim : true
+        type : String,
+        required : [true, 'Feild is required']
     },
     email : {
-        type : String, 
-        required : [true, "email feild is required"],
-        trim : true,
+        type : String,
+        required : [true, 'Email is required'],
         unique : true
-    },
+    }, 
     photo : {
-        type : String, 
+        type : String,
         default : 'avatar.png'
     }
 });
 
 
 
-// exports
 module.exports = mongoose.model('Student', studentModel);
